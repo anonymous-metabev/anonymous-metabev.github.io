@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MetaBEV">
+  <meta name="keywords" content="SSL">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MetaBEV: Solving Sensor Failures and Tasks Conflict in BEV Perception</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MetaBEV: Solving Sensor Failures and Tasks Conflict in BEV Perception</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">ICCV Anonymous Submission 7004</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/images/teaser_video.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        We propose MetaBEV to sufficiently solve sensor failures (inluding large-scale sensor corruption and extreme sensor missing) and tasks conflict in BEV perception.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!--##################################   Abstract   ##################################-->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Multi-sensors (e.g., camera and LiDAR) perception has shown its great superiority in autonomous driving.
+            However, sensor failures and task conflicts lead to inaccurate recognition, comprising the autonomous safety.
+          </p>
+          <p>
+            In this paper, we propose \model\ to address the above two challenges. Specifically, we adopt modal-specific attention modules to flexibly process cameras, LiDAR, or both modalities for generating fused BEV representations. Meanwhile, the Multi-task Mixture-of-Experts (\moe) is integrated to alleviate the disparate optimization in multi-task learning.
+We evaluate \model\ on nuScenes dataset~\cite{caesar-20cvpr-nuscenes}, on which large-scale sensor corruptions and sensor missing are formulated. Experiments show that \model\ achieves state-of-the-art performance in both full/corrupted modality and multi-task learning, demonstrating its flexibility, robustness, and adaptability.
+For example, when encountering extreme sensor failures (e.g., missing all six cameras), \model\ achieves 69.2\% NDS on 3D detection, exhibiting significant superiority to current methods. Besides, \model\ sets a new state-of-the-art mIoU of 70.4\% on BEV map segmentation.
+          </p>
+          <p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+  </div>
+</section>
+
+
+<!--
+
+</body>
+</html>
