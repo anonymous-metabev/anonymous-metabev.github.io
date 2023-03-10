@@ -6,7 +6,7 @@
         content="MetaBEV">
   <meta name="keywords" content="SSL">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MetaBEV: Solving Sensor Failures and Tasks Conflict in BEV Perception</title>
+  <title>MetaBEV: Solving Sensor Failures for BEV  Detection and Map Segmentation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -48,7 +48,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">MetaBEV: Solving Sensor Failures and Tasks Conflict in BEV Perception</h1>
+          <h1 class="title is-1 publication-title">MetaBEV: Solving Sensor Failures for BEV  Detection and Map Segmentation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">ICCV Anonymous Submission 7004</a></span>
@@ -64,10 +64,22 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
+      <!--
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/images/teaser_video.mp4"
                 type="video/mp4">
       </video>
+      -->
+ <!--
+      <figure class="fa-align-center">
+        <img src="./static/images/teaser.jpg" alt="A description of your image">
+      </figure>
+      -->
+
+        <figure>
+          <img src="./static/images/teaser.jpg" alt="light_and_fark"  style="width:100%">
+        </figure>
+
       <h2 class="subtitle has-text-centered">
         We propose MetaBEV to efficiently solve sensor failures (inluding large-scale sensor corruption and extreme sensor missing) and tasks conflict in BEV perception.
       </h2>
@@ -88,13 +100,23 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Multi-sensors (e.g., camera and LiDAR) perception has shown its great superiority in autonomous driving.
-            However, sensor failures and task conflicts lead to inaccurate recognition, comprising the autonomous safety.
+            Perception systems in modern autonomous driving vehicles typically take inputs from complementary multi-modal sensors, e.g., LiDAR and cameras.
+            However, in real-world applications, sensor corruptions and failures lead to inferior performances, thus compromising autonomous safety.
           </p>
           <p>
-            In this paper, we propose \model\ to address the above two challenges. Specifically, we adopt modal-specific attention modules to flexibly process cameras, LiDAR, or both modalities for generating fused BEV representations. Meanwhile, the Multi-task Mixture-of-Experts (\moe) is integrated to alleviate the disparate optimization in multi-task learning.
-We evaluate \model\ on nuScenes dataset~\cite{caesar-20cvpr-nuscenes}, on which large-scale sensor corruptions and sensor missing are formulated. Experiments show that \model\ achieves state-of-the-art performance in both full/corrupted modality and multi-task learning, demonstrating its flexibility, robustness, and adaptability.
-For example, when encountering extreme sensor failures (e.g., missing all six cameras), \model\ achieves 69.2\% NDS on 3D detection, exhibiting significant superiority to current methods. Besides, \model\ sets a new state-of-the-art mIoU of 70.4\% on BEV map segmentation.
+            In this paper, we propose a robust framework, called MetaBEV, to address extreme real-world environments, involving overall six sensor corruptions and two extreme sensor-missing situations.
+            In MetaBEV, signals from multiple sensors are first processed by modal-specific encoders.
+            Subsequently, a set of dense BEV queries are initialized, termed meta-BEV.
+            These queries are then processed iteratively by a BEV-Evolving decoder, which selectively aggregates deep features from either LiDAR, cameras, or both modalities.
+            The updated BEV representations are further leveraged for multiple 3D prediction tasks.
+            Additionally, we introduce a new M^2oE structure to alleviate the performance drop on distinct tasks in multi-task joint learning.
+          </p>
+          <p>
+            Finally, MetaBEV is evaluated on the nuScenes dataset with 3D object detection and BEV map segmentation tasks.
+            Experiments show MetaBEV outperforms prior arts by a large margin on both full and corrupted modalities.
+            For instance, when the LiDAR signal is missing, MetaBEV improves 35.5% detection NDS and 17.7% segmentation mIoU upon the vanilla BEVFusion model;
+            and when the camera signal is absent, MetaBEV still achieves 69.2% NDS and 53.7% mIoU, which is even higher than previous works that perform on full-modalities.
+            Moreover, MetaBEV performs fairly against previous methods in both canonical perception and multi-task learning settings, refreshing state-of-the-art nuScenes BEV map segmentation with 70.4% mIoU.
           </p>
           <p>
         </div>
